@@ -24,8 +24,19 @@ public class AddGui extends JFrame implements ActionListener {
         add(label);
 
 //        add EventListener, ActionListener is an Interface
-//        this should be the object of AddGui and Object of ActionListener
+//        this should be the interface of ActionListener
         b.addActionListener(this);
+
+////    todo without implementing the ActionListener , we can do this way
+//        b.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                int num1 =Integer.parseInt(t1.getText());
+//                int num2=Integer.parseInt(t2.getText());
+//                int value = num1 + num2;
+//                label.setText(" "+ value);
+//            }
+//        });
 
         setVisible(true);
         setSize(400,400);
@@ -42,6 +53,9 @@ public class AddGui extends JFrame implements ActionListener {
         int value = num1 + num2;
         label.setText(" "+ value);
     }
+
+
+
 
     public static void main(String[] args) {
         AddGui addition1 = new AddGui();
