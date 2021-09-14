@@ -6,10 +6,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Caller extends JFrame  implements ActionListener {
+    int i;
+    JProgressBar p;
     public Caller(){
         JButton b = new JButton("ADD Form");
-        b.addActionListener(this);
+        p = new JProgressBar(0,20);
+        i = 0;
+        final Timer t = new Timer(250,this);
+        b.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                t.start();
+            }
+        });
         add(b);
+        add(p);
 
         setVisible(true);
         setSize(400,400);
@@ -19,9 +29,13 @@ public class Caller extends JFrame  implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        new AddGui();
+       if(i == 20){
+           new AddGui();
 //        once linked to the other form, the former form will be closed
-        dispose();
+           dispose();
+       }
+       i++;
+       p.setValue(i);
     }
 
     public static void main(String[] args) {
