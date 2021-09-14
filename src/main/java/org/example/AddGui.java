@@ -28,6 +28,7 @@ public class AddGui extends JFrame implements ActionListener {
         b.addActionListener(this);
 
 ////    todo without implementing the ActionListener , we can do this way
+
 //        b.addActionListener(new ActionListener() {
 //            @Override
 //            public void actionPerformed(ActionEvent e) {
@@ -36,6 +37,17 @@ public class AddGui extends JFrame implements ActionListener {
 //                int value = num1 + num2;
 //                label.setText(" "+ value);
 //            }
+//        });
+
+////        todo For Jave 8!! third way to do the ActionListener with Lambda Expression:
+//          todo only for the Functional Interface: only one method in the interface
+//        b.addActionListener(ae ->
+//        {
+//            int num1 =Integer.parseInt(t1.getText());
+//            int num2=Integer.parseInt(t2.getText());
+//
+//            int value = num1 + num2;
+//            label.setText(" "+ value);
 //        });
 
         setVisible(true);
